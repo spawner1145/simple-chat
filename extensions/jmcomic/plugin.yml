@@ -1,4 +1,4 @@
-func_part:  #函数调用具体信息
+func_part:  #函数调用具体信息，汇入func_declearation
   name: call_jm
   description: jmcomic漫画查询、预览、下载。“验车”是预览的另一种称呼
   parameters:
@@ -26,7 +26,7 @@ funcs:   #供函数调用构建函数索引
 ordinary_funcs:   #普通指令触发函数
   - name: query_comic
     description: 查询漫画信息
-    trigger_rule:
+    trigger_rules:     #触发规则，可读取并结合examples自动渲染为菜单图片
       - startswith: 验车
     examples:
       - 验车350234
