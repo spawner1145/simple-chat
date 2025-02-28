@@ -23,3 +23,10 @@ funcs:
   - name: call_jm
     description: 调用jmcomic的漫画查询、预览、下载接口
     importfrom: extensions.jmcomic.func.jmcomic
+ordinary_funcs:   #普通指令触发函数
+  - name: query_comic
+    description: 查询漫画信息
+    trigger_rule:
+      - startswith: 验车
+    examples:
+      - 验车350234
