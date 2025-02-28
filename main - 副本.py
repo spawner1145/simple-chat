@@ -609,7 +609,7 @@ async def handle_message(client_id: str, message_data: Dict[str, Any]):
             answer = await gemini_request(history)
             logger.debug(f"客户端 {client_id}: 非流式响应: {answer}")
             history.append({"role": "model", "parts": [{"text": answer}]})
-            conversation_history[user_id] = history[-50:]
+            conversation_history[user_id] = history
             await send_message(client_id, [Text(answer)])  # 默认非流式
         except Exception as e:
             logger.error(f"客户端 {client_id}: 非流式处理错误: {str(e)}")
