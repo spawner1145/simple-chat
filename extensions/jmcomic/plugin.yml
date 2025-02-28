@@ -5,17 +5,17 @@ func_part:  #函数调用具体信息
     type: object
     properties:
       mode: 
-        type: string,
+        type: string
         enum:
         - preview
         - download
         - search
         description: 预览和下载需要comic_id，搜索需要query_target
       comic_id: 
-        type: integer,
+        type: integer
         description: 漫画id。预览和下载时使用
       serach_topic:
-        type: string,
+        type: string
         description: 搜索关键字
     required:
       - mode
