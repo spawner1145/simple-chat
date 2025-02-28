@@ -1,4 +1,4 @@
-func_part:
+func_part:  #函数调用具体信息
   name: call_jm
   description: jmcomic漫画查询、预览、下载。“验车”是预览的另一种称呼
   parameters:
@@ -19,7 +19,7 @@ func_part:
         description: 搜索关键字
     required:
       - mode
-funcs:
+funcs:   #供函数调用构建函数索引
   - name: call_jm
     description: 调用jmcomic的漫画查询、预览、下载接口
     importfrom: extensions.jmcomic.func.jmcomic
