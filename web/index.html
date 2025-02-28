@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>聊天界面</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/index.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>菜单</h2>
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">设置</a></li>
+            <li><a href="#">关于</a></li>
+        </ul>
+        <button id="mode-toggle" onclick="toggleMode()">切换到黑夜模式</button>
+        <button id="clear-chat" onclick="clearChat()">清除记录</button>
+        <button id="toggle-streaming" onclick="toggleStreaming()">开启流式输出</button>
+    </div>
+    <div class="main-content">
+        <div class="chat-container" id="chatContainer"></div>
+        <div class="input-area">
+            <div id="messageInput" contenteditable="true"></div>
+            <input type="file" id="fileInput" style="display: none;" multiple accept="image/*,video/*,audio/*,.pdf">
+            <div class="button-container">
+                <button onclick="document.getElementById('fileInput').click()">上传文件</button>
+                <button onclick="sendMessage()">发送</button>
+            </div>
+        </div>
+    </div>
+    <div id="mediaModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">×</button>
+            <div id="modalMedia"></div>
+            <div class="modal-controls" id="modalControls"></div>
+        </div>
+    </div>
+    <div id="nodeModal" class="node-modal">
+        <div class="node-modal-content">
+            <button class="node-modal-close-btn" onclick="closeNodeModal()">×</button>
+            <div id="nodeModalContent"></div>
+        </div>
+    </div>
+    <div id="dragOverlay" class="drag-overlay"></div>
+    <script src="./assets/js/index.js"></script>
+</body>
+</html>
